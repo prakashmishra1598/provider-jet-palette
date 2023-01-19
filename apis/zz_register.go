@@ -10,17 +10,33 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/upbound/upjet-provider-template/apis/null/v1alpha1"
-	v1alpha1apis "github.com/upbound/upjet-provider-template/apis/v1alpha1"
-	v1beta1 "github.com/upbound/upjet-provider-template/apis/v1beta1"
+	v1alpha1 "github.com/crossplane-contrib/provider-jet-palette/apis/addon/v1alpha1"
+	v1alpha1application "github.com/crossplane-contrib/provider-jet-palette/apis/application/v1alpha1"
+	v1alpha1backup "github.com/crossplane-contrib/provider-jet-palette/apis/backup/v1alpha1"
+	v1alpha1cloudaccount "github.com/crossplane-contrib/provider-jet-palette/apis/cloudaccount/v1alpha1"
+	v1alpha1cluster "github.com/crossplane-contrib/provider-jet-palette/apis/cluster/v1alpha1"
+	v1alpha1privatecloudgateway "github.com/crossplane-contrib/provider-jet-palette/apis/privatecloudgateway/v1alpha1"
+	v1alpha1registry "github.com/crossplane-contrib/provider-jet-palette/apis/registry/v1alpha1"
+	v1alpha1spectrocloud "github.com/crossplane-contrib/provider-jet-palette/apis/spectrocloud/v1alpha1"
+	v1alpha1apis "github.com/crossplane-contrib/provider-jet-palette/apis/v1alpha1"
+	v1beta1 "github.com/crossplane-contrib/provider-jet-palette/apis/v1beta1"
+	v1alpha1virtual "github.com/crossplane-contrib/provider-jet-palette/apis/virtual/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1application.SchemeBuilder.AddToScheme,
+		v1alpha1backup.SchemeBuilder.AddToScheme,
+		v1alpha1cloudaccount.SchemeBuilder.AddToScheme,
+		v1alpha1cluster.SchemeBuilder.AddToScheme,
+		v1alpha1privatecloudgateway.SchemeBuilder.AddToScheme,
+		v1alpha1registry.SchemeBuilder.AddToScheme,
+		v1alpha1spectrocloud.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
+		v1alpha1virtual.SchemeBuilder.AddToScheme,
 	)
 }
 
